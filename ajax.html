@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercice Ajax</title>
+</head>
+<body>
+	<form method="post" action="traitement.php">
+   		<p>
+       		<label for="continent">Selectionner votre continent ?</label> <br />
+
+       		<select name="continent" id="continent">
+
+       		</select>
+   		</p>
+	</form>
+   <p>
+       <label for="pays">Dans quel pays habitez-vous ?</label><br />
+       <select name="pays" id="pays">
+           <option value="france">France</option>
+           <option value="espagne">Espagne</option>
+           <option value="italie">Italie</option>
+           <option value="royaume-uni">Royaume-Uni</option>
+           <option value="canada">Canada</option>
+           <option value="etats-unis">États-Unis</option>
+           <option value="chine">Chine</option>
+           <option value="japon">Japon</option>
+       </select>
+   </p>
+</form>
+   <p>
+   	requete select * ville
+       <label for="pays">Dans quel pays habitez-vous ?</label><br />
+       <select name="villes" id="pays">
+       	while() {
+       		echo <option value="req['id']">req['libelle']</option>
+       }
+
+       </select>
+   </p>
+</form>
+
+
+	<script>
+
+		$.ajax('/jquery/submitData', {
+   		type: 'POST',  // http method
+   		data: { myData: 'This is my data.' },  // data to submit
+   		success: function (data, status, xhr) {
+       	$('p').append('status: ' + status + ', data: ' + data);
+   		},
+   		error: function (jqXhr, textStatus, errorMessage) {
+           $('p').append('Error' + errorMessage);
+   		}
+		});
+	</script>
+</body>
+</html>
