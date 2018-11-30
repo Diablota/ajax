@@ -1,0 +1,15 @@
+body {
+    font:30px arial;
+    color:#bb2c2c ;
+    text-align:center;
+    padding:270px; 
+    background-image:url(../img/rond.gif);
+    background-size: 1920px 960px;
+    background-repeat: no-repeat;
+    }
+
+.bouton{
+    color: #bb2c2c;
+    border-width: 10px;
+    background-color: hsla(0, 6%, 7%, 0.486);
+    }

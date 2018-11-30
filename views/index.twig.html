@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Exercice Ajax</title>
+    <script type="text/javascript" src="lib/js/bootstrap.js"></script>
+    <script type="text/javascript" src="lib/js/jquery.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="src/css/ajax.css">
+  
+</head>
+<body>
+   <form method="POST" action="index.php">
+        <h2>Welcome</h2>
+
+        <label class="form_col" for="lastName">Nom :</label>
+        <input class="bouton" name="lastName" id="lastName" type="text" />
+        <br /><br />
+
+        <label class="form_col" for="firstName">Prénom :</label>
+        <input class="bouton" name="firstName" id="firstName" type="text" />
+        <br /><br />
+
+        <select class="bouton" name="continent" id="continent">
+            <option value="none">Sélectionnez votre continent</option>
+            {% for unContinent in reponse %}
+                <option value="{{ unContinent.id }}">{{ unContinent.libelle }}</option>
+            {% endfor %}
+        </select>
+
+        <select class="bouton" name="pays" id="pays">
+        </select>
+
+        <select class="bouton" name="ville" id="ville">
+        </select>
+        <br/><br/><br/>
+
+         <span class="form_col"></span>
+         
+        <input class="bouton" type="submit" value="M'inscrire" />
+   </form>
+
+
+	
+</body>
+</html>
