@@ -42,3 +42,11 @@ function insertUser($nom, $prenom, $villeId) {
     $req->bindParam(":ville", $villeId);
     $req->execute();
 }
+
+function getPrenom($prenom) {
+    $bdd = coBdd();
+    $reponse = $bdd->prepare('SELECT * FROM utilisateur WHERE prenom = :prenom');
+    $reponse->bindParam(":prenom", $prenom);
+    $reponse->execute();
+    return $reponse;
+}

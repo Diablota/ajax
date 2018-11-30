@@ -29,5 +29,24 @@ window.onload = function() {
       }
     });
   });
+
+
+  $('#firstName').keyup(function() {
+    prenom = $('#firstName').val();
+    $.ajax({
+      type:"POST",
+      url:"controller/verifPseudo.php",
+      data:'prenom=' + prenom,
+      success:function(data) {
+        if(data == 1) {
+          $('#erreur').show();
+        } else {
+          $('#erreur').hide();
+        }
+      }
+
+
+    });
+  });
 }
 
